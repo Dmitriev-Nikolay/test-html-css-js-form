@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html-css-test-layout</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            outline: none;
+            font-family: "Proxima Nova", Roboto, system-ui, Tahoma, sans-serif;
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2 {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-indent: 25px;
+            margin: 20px 0;
+        }
+
+        .footer {
+            display: flex;
+        }
+
+        .wrapper {
+            width: calc(100vw - 100px);
+            height: 100%;
+            background-color: #fff;
+            margin: 50px auto;
+            max-width: 60%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            text-decoration: none;
+            width: 150px;
+        }
+
+        .product-img {
+            height: 120px;
+            width: 80px;
+        }
+
+        .product-desc {
+            color: #9a9a9a;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .send-info-product {
+            margin-top: 10px;
+            border-radius: 20px;
+            padding: 5px;
+            width: 120px;
+            background: #f13c6e;
+            color: #fff;
+            border-style: none;
+            cursor: pointer;
+        }
+
+        .send-info-product:hover,
+        .submit-button:hover {
+            background-color: #8c2341;
+        }
+
+        .send-info-product:active,
+        .submit-button:hover {
+            background: linear-gradient(#8c2341, #f13c6e);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        ul,
+        ol {
+            margin-top: 20px;
+            padding-left: 40px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding: 50px 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #fdc7d6;
+            color: #f13c6e;
+            margin: auto;
+            border-radius: 20px;
+            padding: 40px;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            left: 260px;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .form {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form input,
+        .form label,
+        .form textarea {
+            width: 100%;
+        }
+
+        .form-text {
+            font-weight: bold;
+            color: #f13c6e;
+            margin: 10px 0;
+            text-indent: 0;
+        }
+
+        .form-input {
+            display: block;
+            width: 50%;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: rgb(91, 77, 77);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-button {
+            justify-content: center;
+            padding: 10px;
+            background: #f13c6e;
+            color: #fff;
+            border-radius: 20px;
+            border-style: none;
+            width: 120px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="wrapper">
+        <header class="header">
+            <h1>Ваш шедевр готов!</h1>
+        </header>
+        <section>
+            <h2>Товарищи!</h2>
+            <p>
+                Консультация с широким активом позволяет выполнять важные задания по разработке направлений
+                прогрессивного развития. Задача организации, в особенности же рамки и место обучения кадров
+                обеспечивает широкому кругу (специалистов) участие в формировании системы обучения кадров,
+                соответствует насущным потребностям. С другой стороны постоянное информационно-пропагандистское
+                обеспечение нашей деятельности позволяет выполнять важные задания по разработке новых предложений.
+                Задача организации, в особенности же сложившаяся структура организации в значительной степени
+                обуславливает создание существенных финансовых и административных условий. Значимость этих проблем
+                настолько очевидна, что консультация с широким активом играет важную роль в формировании модели
+                развития. Идейные соображения высшего порядка, а также постоянное информационно-пропагандистское
+                обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации модели развития.
+            </p>
+            <img src="/assets/forest.jpg" alt="foto-rect">
+            <p>Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют от нас
+                анализа соответствующий условий активизации. Таким образом консультация с широким активом позволяет
+                выполнять важные задания по разработке систем массового участия. Таким образом реализация намеченных
+                плановых заданий позволяет выполнять важные задания по разработке новых предложений.
+            </p>
+            <p>
+                Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет
+                оценить значение форм развития. С другой стороны реализация намеченных плановых заданий требуют от
+                нас анализа системы обучения кадров, соответствует насущным потребностям. Равным образом дальнейшее
+                развитие различных форм деятельности представляет собой интересный эксперимент проверки существенных
+                финансовых и административных условий. Задача организации, в особенности же постоянный
+                количественный рост и сфера нашей активности требуют от нас анализа дальнейших направлений развития.
+                Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности
+                позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении
+                поставленных задач. Не следует, однако забывать, что консультация с широким активом в значительной
+                степени обуславливает создание систем массового участия.
+            </p>
+            <ul class="products clearfix">
+                <li class="product-wrapper">
+                    <img class="product-img" src="/assets/armchair.jpg" alt="product-foto">
+                    <span class="product-desc">
+                        Парикмахерское кресло "Норм" гидравлическое
+                    </span>
+                    <span class="product-price">
+                        9900 ₽
+                    </span>
+                    <button class="send-info-product" id="send">Купить</button>
+                </li>
+                <li class="product-wrapper">
+                    <img class="product-img" src="/assets/armchair.jpg" alt="product-foto">
+                    <span class="product-desc">
+                        Парикмахерское кресло "Норм" гидравлическое
+                    </span>
+                    <span class="product-price">
+                        9900 ₽
+                    </span>
+                    <button class="send-info-product" id="send">Купить</button>
+                </li>
+                <li class="product-wrapper">
+                    <img class="product-img" src="/assets/armchair.jpg" alt="product-foto">
+                    <span class="product-desc">
+                        Парикмахерское кресло "Норм" гидравлическое
+                    </span>
+                    <span class="product-price">
+                        9900 ₽
+                    </span>
+                    <button class="send-info-product" id="send">Купить</button>
+                </li>
+                <li class="product-wrapper">
+                    <img class="product-img" src="/assets/armchair.jpg" alt="product-foto">
+                    <span class="product-desc">
+                        Парикмахерское кресло "Норм" гидравлическое
+                    </span>
+                    <span class="product-price">
+                        9900 ₽
+                    </span>
+                    <button class="send-info-product" id="send">Купить</button>
+                </li>
+            </ul>
+            <p>
+                Значимость этих проблем настолько очевидна, что сложившаяся структура организации в значительной степени
+                обуславливает создание новых предложений. Не следует, однако забывать, что сложившаяся структура
+                организации позволяет выполнять важные задания по разработке новых предложений. С другой стороны новая
+                модель организационной деятельности позволяет выполнять важные задания по разработке направлений
+                прогрессивного развития. Таким образом постоянное информационно-пропагандистское обеспечение нашей
+                деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Не
+                следует, однако забывать, что сложившаяся структура организации влечет за собой процесс внедрения и
+                модернизации модели развития.
+            </p>
+            <img src="/assets/forest.jpg" alt="foto-rect">
+            <ol>
+                <li>Пункт первый </li>
+                <li>Пункт второй </li>
+                <li>Пункт третий </li>
+            </ol>
+            <p>
+                Товарищи! рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в
+                формировании
+                форм развития. Задача организации, в особенности же постоянное информационно-пропагандистское
+                обеспечение
+                нашей деятельности позволяет выполнять важные задания по разработке систем массового участия. Равным
+                образом
+                новая модель организационной деятельности в значительной степени обуславливает создание направлений
+                прогрессивного развития. Товарищи! сложившаяся структура организации позволяет оценить значение новых
+                предложений. Идейные соображения высшего порядка, а также реализация намеченных плановых заданий
+                позволяет
+                оценить значение позиций, занимаемых участниками в отношении поставленных задач. Равным образом
+                реализация
+                намеченных плановых заданий требуют определения и уточнения дальнейших направлений развития.
+            </p>
+        </section>
+        <section>
+            <h2>
+                Товарищи! рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в
+                формировании форм развития.
+            </h2>
+            <ul type="disc">
+                <li>
+                    Задача организации, в особенности же укрепление и развитие структуры в значительной степени
+                    обуславливает создание новых предложений. Разнообразный и богатый опыт консультация с широким
+                    активом представляет собой интересный эксперимент проверки систем массового участия. Не следует,
+                    однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов)
+                    участие в формировании направлений прогрессивного развития.
+                </li>
+                <li>
+                    Задача организации, в особенности же дальнейшее развитие различных форм деятельности обеспечивает
+                    широкому кругу (специалистов) участие в формировании направлений прогрессивного развития.
+                </li>
+                <li>
+                    Значимость этих проблем настолько очевидна, что рамки и место обучения кадров играет важную роль в
+                    формировании соответствующий условий активизации. Равным образом рамки и место обучения кадров
+                    играет важную роль в формировании систем массового участия.
+                </li>
+                <li>
+                    Разнообразный и богатый опыт реализация намеченных плановых заданий влечет за собой процесс
+                    внедрения и модернизации форм развития. Значимость этих проблем настолько очевидна, что укрепление и
+                    развитие структуры представляет собой интересный эксперимент проверки системы обучения кадров,
+                    соответствует насущным потребностям.
+                </li>
+            </ul>
+            <p>
+                <strong>
+                    Задача организации, в особенности же реализация намеченных плановых заданий играет важную роль в
+                    формировании направлений прогрессивного развития. Товарищи! рамки и место обучения кадров требуют от
+                    нас
+                    анализа дальнейших направлений развития. Повседневная практика показывает, что рамки и место
+                    обучения
+                    кадров представляет собой интересный эксперимент проверки систем массового участия. Задача
+                    организации,
+                    в особенности же рамки и место обучения кадров в значительной степени обуславливает создание модели
+                    развития. Товарищи! рамки и место обучения кадров требуют определения и уточнения соответствующий
+                    условий активизации. Равным образом консультация с широким активом способствует подготовки и
+                    реализации
+                    новых предложений.
+                </strong>
+            </p>
+        </section>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">×</span>
+                    <h2>Форма заказа</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form" action="" name="form">
+                        <label for="">
+                            <p class="form-text">Имя</p>
+                            <input class="form-input" type="text" name="name" id="name" placeholder="Введите имя"
+                                required>
+                        </label>
+                        <label for="">
+                            <p class="form-text">Телефон</p>
+                            <input class="form-input" type="text" name="phone" id="phone" placeholder="Введите телефон"
+                                required>
+                        </label>
+                        <label for="">
+                            <p class="form-text">Email</p>
+                            <input class="form-input" type="text" name="email" id="email" placeholder="Введите email"
+                                required>
+                        </label>
+                        <label for="">
+                            <p class="form-text">Название товара</p>
+                            <input class="form-input" type="text" name="titleProduct" id="titleProduct"
+                                placeholder="Введите название товара" required>
+                        </label>
+                        <button class="submit-button" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    const modalSend = document.querySelector('#myModal'); // модалка с формой
+    const form = document.querySelector('.form'); // форма 
+
+    const butnBuyProduct = document.querySelectorAll('.send-info-product');
+    butnBuyProduct.forEach((elem) => {
+        elem.addEventListener('click', () => modalSend.style.display = "block");
+    });
+
+    const closeModalForm = document.querySelector('.close');
+    closeModalForm.onclick = (e) => {
+        modalSend.style.display = "none";
+        e.target.reset();
+    }
+
+    window.onclick = (event) => {
+        if (event.target == modalSend) {
+            modalSend.style.display = "none";
+        };
+    };
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let name = document.querySelector('#name').value;
+        let phone = document.querySelector('#phone').value;
+        let email = document.querySelector('#email').value;
+        let titleProduct = document.querySelector('#titleProduct').value;
+
+        let alertView = 'Ваше имя: ' + name + '\nВаш телефон: ' + phone + ' ' + '\nВаше email: ' + email + '\nНазвание товара: ' + titleProduct;
+
+        alert(alertView);
+        form.reset();
+        modalSend.style.display = "none";
+        // form.submit();
+    });
+</script>
+
+</html>
